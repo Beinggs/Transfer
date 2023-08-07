@@ -29,7 +29,10 @@ public partial class Program
 		Command receiveTestCommand;
 
 		// build the command line...
-		RootCommand rootCommand = new ("Simple transfer app")
+		var arg0 = Environment.GetCommandLineArgs() [0];
+		var exeName = Path.GetFileNameWithoutExtension (arg0);
+
+		RootCommand rootCommand = new ($"Beinggs Transfer ({exeName}) - Simple Transfer App")
 		{
 			(sendCommand = new (
 				name: "send",

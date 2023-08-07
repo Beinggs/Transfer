@@ -27,10 +27,10 @@ public static class NumberExtensions
 	public static string HumanSize (this float bytes)
 		=> bytes switch
 		{
-			< Size.Kb => $"{bytes} byte(s)",
-			< Size.Mb => $"{bytes / Size.Kb:F3} KB",
-			< Size.Gb => $"{bytes / Size.Mb:F3} MB",
-			_         => $"{bytes / Size.Gb:F3} GB"
+			< Size.KiB => $"{bytes} byte(s)",
+			< Size.MiB => $"{bytes / Size.KiB:F3} KiB",
+			< Size.GiB => $"{bytes / Size.MiB:F3} MiB",
+			_          => $"{bytes / Size.GiB:F3} GiB"
 		};
 
 	/// <summary>
@@ -54,10 +54,10 @@ public static class NumberExtensions
 	public static string HumanSpeed (this float bps)
 		=> bps switch
 		{
-			< Size.Kb => $"{bps:F2} bps",
-			< Size.Mb => $"{bps / Size.Kb:F2} Kbps",
-			< Size.Gb => $"{bps / Size.Mb:F2} Mbps",
-			_         => $"{bps / Size.Gb:F2} Gbps"
+			< Size.KiB => $"{bps:F2} bit/s",
+			< Size.MiB => $"{bps / Size.KiB:F2} Kibit/s",
+			< Size.GiB => $"{bps / Size.MiB:F2} Mibit/s",
+			_          => $"{bps / Size.GiB:F2} Gibit/s"
 		};
 
 	/// <summary>
@@ -90,17 +90,17 @@ public static class NumberExtensions
 public static class Size
 {
 	/// <summary>
-	/// One kilobyte (OK, a kibibyte to be perfectly correct)
+	/// One kibibyte.
 	/// </summary>
-	public const int Kb = 1024;
+	public const int KiB = 1024;
 
 	/// <summary>
-	/// One megabyte (OK, a mibibyte to be perfectly correct)
+	/// One mebibyte.
 	/// </summary>
-	public const int Mb = Kb * 1024;
+	public const int MiB = KiB * KiB;
 
 	/// <summary>
-	/// One gigabyte (OK, a gibibyte to be perfectly correct)
+	/// One gibibyte.
 	/// </summary>
-	public const int Gb = Mb * 1024;
+	public const int GiB = MiB * KiB;
 }
