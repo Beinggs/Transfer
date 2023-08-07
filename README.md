@@ -17,6 +17,12 @@ which tracks the read time and write time of the source and destination streams 
 [`Stopwatch`](https://learn.microsoft.com/dotnet/api/system.diagnostics.stopwatch) timers for the best possible
 accuracy.
 
+## Example output
+
+``` shell
+Total of 7.741 GB read in 6.174 sec @ 10.03 Gbps, written in 4.985 sec @ 12.42 Gbps into TEST.Windows.22H2.iso
+```
+
 ## Releases
 
 The following builds can be found under Releases:
