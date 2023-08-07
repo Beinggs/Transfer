@@ -42,7 +42,7 @@ partial class Program
 			if (testSize is < 1 or > Program.MaxTestSize)
 			{
 				throw new InvalidOperationException (
-						$"Test size must be between {Program.MinTestSize} and {Program.MaxTestSize} (in MB)");
+						$"Test size must be between {Program.MinTestSize} and {Program.MaxTestSize} (in MiB)");
 			}
 
 			if (string.IsNullOrWhiteSpace (recipient))
@@ -107,7 +107,7 @@ partial class Program
 			// can't bind globals to root command, so have to handle them in _every_ command :-/
 			SetGlobals (verbosity, measured.ToBool(), port);
 
-			($"Receiving {(maxSize > 0 ? $"up to {maxSize} MB of " : "")}test data " +
+			($"Receiving {(maxSize > 0 ? $"up to {maxSize} MiB of " : "")}test data " +
 				$"{(maxTime > 0 ? $"for up to {maxTime} seconds " : "")}" +
 				$"from {sender} {ReceiveInfo()}...").Log (LogLevel.Quiet);
 

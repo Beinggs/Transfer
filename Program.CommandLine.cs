@@ -27,19 +27,19 @@ partial class Program
 	public static readonly string[] Anyone = { "anyone", "any", "a" };
 
 	/// <summary>
-	/// Defines the minimum test size option value, in MB.
+	/// Defines the minimum test size option value, in MiB.
 	/// </summary>
-	public const int MinTestSize = 1; // MB
+	public const int MinTestSize = 1; // MiB
 
 	/// <summary>
-	/// Defines the maximum test size option value, in MB.
+	/// Defines the maximum test size option value, in MiB.
 	/// </summary>
-	public const int MaxTestSize = 10240; // MB
+	public const int MaxTestSize = 10240; // MiB
 
 	/// <summary>
-	/// Defines the default test size option value, in MB.
+	/// Defines the default test size option value, in MiB.
 	/// </summary>
-	public const int DefTestSize = 10; // MB
+	public const int DefTestSize = 10; // MiB
 
 	/// <summary>
 	/// Indicates whether performance should be measured when receiving test data or a file.
@@ -94,7 +94,7 @@ partial class Program
 
 	static readonly Option<int> optTestSize = new (
 		aliases: new[] { "--size", "-s", "/s" },
-		description: $"Test data size, in MB, between {MinTestSize} and {MaxTestSize}",
+		description: $"Test data size, in MiB, between {MinTestSize} and {MaxTestSize}",
 		getDefaultValue: () => DefTestSize);
 
 	static readonly Command cmdFileTo = new (
@@ -135,7 +135,7 @@ partial class Program
 
 	static readonly Option<int> optMaxSize = new (
 		aliases: new[] { "--max-size", "-s", "/s" },
-		description: "Sets the maximum amount of test data to receive, in MB, " +
+		description: "Sets the maximum amount of test data to receive, in MiB, " +
 				"or omit (or set to zero) to receive all test data sent",
 		getDefaultValue: () => 0);
 

@@ -22,7 +22,7 @@ accuracy.
 ## Example output
 
 ``` shell
-Total of 7.741 GB read in 6.174 sec @ 10.03 Gbps, written in 4.985 sec @ 12.42 Gbps into TEST.Windows.22H2.iso
+Total of 7.741 GiB read in 6.174 sec @ 10.03 Gibit/s and written in 4.985 sec @ 12.42 Gibit/s into TEST.Windows.22H2.iso
 ```
 
 ## Releases
@@ -65,11 +65,11 @@ This section provides an overview of options; run `bx -h` or `bx {command} -h` t
 
 `-r`, `/r`, `--repeat`: Repeats file sending (by default the utility quits after sending the file or test data)\
 `-f`, `/f`, `--include-filename`: Includes the filename as a 'header' at the start of the file data (see below)\
-`-s`, `/s`, `--size`: Specifies the size of test data to send in MB, defaulting to 10, up to 10240 (10 GB)
+`-s`, `/s`, `--size`: Specifies the size of test data to send in MiB, defaulting to 10, up to 10240 (10 GB)
 
 #### Receive Options
 
-`-m`, `/m`, `--max-size`: Specifies the maximum size of data to recieve, in MB\
+`-m`, `/m`, `--max-size`: Specifies the maximum size of data to recieve, in MiB\
 `-m`, `/m`, `--max-time`: Specifies the maximum time to wait for data to be received, in seconds\
 `--version`: Shows the version number
 

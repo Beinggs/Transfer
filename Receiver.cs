@@ -36,13 +36,13 @@ public class Receiver
 	/// <summary>
 	/// Receives test data from <paramref name="sender"/>, optionally with size or time limits.
 	/// </summary>
-	/// <param name="maxSize">An optional maximum size to receive, in MB.</param>
+	/// <param name="maxSize">An optional maximum size to receive, in MiB.</param>
 	/// <param name="maxTime">An optional maximum time to receive for, in seconds.</param>
 	/// <param name="sender">The sender to receive the test data from.</param>
 	/// <exception cref="InvalidOperationException">Thrown when an invalid parameter value is given.</exception>
 	public Task ReceiveTestAsync (int maxSize, int maxTime, string sender)
 	{
-		_maxBytes = (ulong) maxSize * Size.MiB; // max size is MB
+		_maxBytes = (ulong) maxSize * Size.MiB; // max size is MiB
 		_maxMs = maxTime * 1000; // max time is seconds
 
 		return Receive (sender);
@@ -85,7 +85,7 @@ public class Receiver
 		var writeSecs = writeMs / 1000f;
 
 		return $"{prefix}{bytes.HumanSize()} read in {readSecs.HumanTime()} @ {(bits / readSecs).HumanSpeed()}" +
-				(showWrite ? $", written in {writeSecs.HumanTime()} @ {(bits / writeSecs).HumanSpeed()}" : "");
+				(showWrite ? $"and written in {writeSecs.HumanTime()} @ {(bits / writeSecs).HumanSpeed()}" : "");
 	}
 
 	async Task<Stream> GetOutputStream (Stream input)
