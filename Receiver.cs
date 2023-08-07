@@ -4,7 +4,7 @@ using System.Text;
 
 using Beinggs.Transfer.Extensions;
 using Beinggs.Transfer.Logging;
-using System;
+
 
 namespace Beinggs.Transfer;
 
@@ -42,7 +42,7 @@ public class Receiver
 	/// <exception cref="InvalidOperationException">Thrown when an invalid parameter value is given.</exception>
 	public Task ReceiveTestAsync (int maxSize, int maxTime, string sender)
 	{
-		_maxBytes = (ulong) maxSize * Size.Mb; // max size is MB
+		_maxBytes = (ulong) maxSize * Size.MiB; // max size is MB
 		_maxMs = maxTime * 1000; // max time is seconds
 
 		return Receive (sender);
@@ -60,7 +60,7 @@ public class Receiver
 		$"\nConnected to {sender}:{Program.Port}; receiving data...".Log (LogLevel.Quiet);
 
 		// copy the stream to output and time it
-		var ( readMs, writeMs, bytes ) = await input.CopyToWithTimingAsync (output, _maxBytes, _maxMs,
+		var ( readMs, writeMs, bytes ) = await input.InstrumentedCopyToAsync (output, _maxBytes, _maxMs,
 				(readMs, writeMs, bytes) =>
 					Humanise (readMs, writeMs, bytes, showWrite).Log (logLevel, "        \r"));
 

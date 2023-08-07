@@ -108,7 +108,7 @@ public class Sender
 		}
 		else if (_testSize > 0)
 		{
-			var dataSize = (long) _testSize * Size.Mb;
+			var dataSize = (long) _testSize * Size.MiB;
 
 			return new ReadOnlyTestStream (dataSize);
 		}

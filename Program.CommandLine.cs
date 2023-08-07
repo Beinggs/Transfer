@@ -12,7 +12,7 @@ partial class Program
 	#region Fields
 
 	/// <summary>
-	/// Defines the default received ffile name (if the <c>includeFileName</c> option isn't specified).
+	/// Defines the default received file name (if the <c>includeFileName</c> option isn't specified).
 	/// </summary>
 	public const string DefaultReceiveFileName = "transfer.dat";
 
@@ -47,7 +47,7 @@ partial class Program
 	public static bool Measured { get; set; }
 
 	/// <summary>
-	/// Profides the port value to connect to or listen on.
+	/// Provides the port value to connect to or listen on.
 	/// </summary>
 	public static int Port { get; set; }
 

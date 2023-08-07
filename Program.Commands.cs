@@ -51,7 +51,7 @@ partial class Program
 			// can't bind globals to root command, so have to handle them in _every_ command :-/
 			SetGlobals (verbosity, measured.ToBool(), port);
 
-			$"Sending test of {((long) testSize * Size.Mb).HumanSize()} to {recipient} {SendTestInfo (repeat)}"
+			$"Sending test of {((long) testSize * Size.MiB).HumanSize()} to {recipient} {SendTestInfo (repeat)}"
 					.Log (LogLevel.Quiet);
 
 			await new Sender (repeat).SendTestAsync (testSize, recipient);
