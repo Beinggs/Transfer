@@ -45,7 +45,7 @@ public class Sender
 	/// <summary>
 	/// Sends test data from <paramref name="recipient"/>.
 	/// </summary>
-	/// <param name="testSize">The size, in KB, of the test data to send.</param>
+	/// <param name="testSize">The size, in MiB, of the test data to send.</param>
 	/// <param name="recipient">The recipient to send the test data to.</param>
 	/// <returns></returns>
 	/// <exception cref="InvalidOperationException"></exception>
@@ -108,7 +108,7 @@ public class Sender
 		}
 		else if (_testSize > 0)
 		{
-			var dataSize = (long) _testSize * Size.Mb;
+			var dataSize = (long) _testSize * Size.MiB;
 
 			return new ReadOnlyTestStream (dataSize);
 		}
